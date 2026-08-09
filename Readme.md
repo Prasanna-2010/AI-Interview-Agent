@@ -28,6 +28,24 @@ The project was developed as part of a Cohort AI project.
 - ⚡ React-based frontend with FastAPI backend
 
 ---
+## 📊 Final Assessment
+## 📸 Application Screenshots
+
+### Start Interview
+
+![Start Interview](screenshots/start-screen.png)
+
+### AI Technical Interview
+
+![AI Technical Interview](screenshots/interview-screen.png)
+
+### Final Assessment — Overview
+
+![Final Assessment](screenshots/feedback-screen-1.png)
+
+### Final Assessment — Recommendations
+
+![Final Recommendations](screenshots/feedback-screen-2.png)
 
 ## 🏗️ System Architecture
 
@@ -73,21 +91,4 @@ The project was developed as part of a Cohort AI project.
                    │ Next Steps          │
                    └─────────────────────┘
 
-## 📊 Final Assessment
-## 📸 Application Screenshots
 
-### Start Interview
-
-![Start Interview](screenshots/start-screen.png)
-
-### AI Technical Interview
-
-![AI Technical Interview](screenshots/interview-screen.png)
-
-### Final Assessment — Overview
-
-![Final Assessment](screenshots/feedback-screen-1.png)
-
-### Final Assessment — Recommendations
-
-![Final Recommendations](screenshots/feedback-screen-2.png)
