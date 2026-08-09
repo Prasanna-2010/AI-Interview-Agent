@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import "./App.css";
-import { sendInterviewMessage } from "./api/interviewApi";
+import { sendInterviewMessage } from "./api/interviewAPI";
 
 function App() {
   // App States: 'START', 'ACTIVE', 'FEEDBACK'
