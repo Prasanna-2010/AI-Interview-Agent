@@ -294,6 +294,9 @@ body {
   font-size: 0.98rem;
   font-family: inherit;
   background: var(--surface-alt);
+  color: var(--text-main);       /* forces dark, readable text */
+  color-scheme: light;           /* stops OS dark-mode from overriding it */
+  caret-color: var(--primary);
   transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
 }
 

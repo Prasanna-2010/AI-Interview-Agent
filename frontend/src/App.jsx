@@ -222,21 +222,23 @@ function App() {
                       onChange={(e) => setSessionId(e.target.value)}
                       required
                       disabled={loading}
-                    />
+                      />
+                    </div>
+                    <div className="input-group">
+                      <label htmlFor="candidateId">Candidate ID</label>
+                      <input
+                        id="candidateId"
+                        type="text"
+                        placeholder="e.g. CAND-010"
+                        value={candidateId}
+                        onChange={(e) => setCandidateId(e.target.value)}
+                        required
+                        disabled={loading}
+                      />
+                    </div>
+                    
                   </div>
-                  <div className="input-group">
-                    <label htmlFor="candidateId">Candidate ID</label>
-                    <input
-                      id="candidateId"
-                      type="text"
-                      placeholder="e.g. CAND-010"
-                      value={candidateId}
-                      onChange={(e) => setCandidateId(e.target.value)}
-                      required
-                      disabled={loading}
-                    />
-                  </div>
-                </div>
+              
 
                 <button type="submit" className="btn-primary btn-start" disabled={loading || !sessionId || !candidateId}>
                   {loading ? (
