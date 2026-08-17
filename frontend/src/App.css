@@ -730,6 +730,10 @@ textarea {
   resize: vertical;
   margin-bottom: 0.5rem;
   background: var(--surface);
+  color: var(--text-main) !important;
+  -webkit-text-fill-color: var(--text-main);
+  color-scheme: light;
+  caret-color: var(--primary);
   transition: border-color 0.2s, box-shadow 0.2s;
 }
 
