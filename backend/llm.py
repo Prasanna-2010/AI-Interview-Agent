@@ -31,7 +31,9 @@ def generate_response(messages):
         model="openai/gpt-oss-20b",
         messages=messages,
         temperature=0.3,
-        max_tokens=500
+        max_tokens=500,
+        response_format={"type": "json_object"},
+        reasoning_format="hidden"
     )
 
     return response.choices[0].message.content
