@@ -73,7 +73,7 @@ Do not include explanations outside the JSON.
             "content": (
                 "You are a strict but fair technical interviewer. "
                 "Evaluate answers objectively."
-                "Return your Evaluation as valid JSON format only."
+                "Return your Evaluation as valid JSON only."
             )
         },
         {
