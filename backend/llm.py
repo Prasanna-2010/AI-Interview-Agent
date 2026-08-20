@@ -27,13 +27,19 @@ def generate_response(messages):
     Send a conversation to Groq and return the AI response.
     """
 
+    # Ensure every Groq request explicitly asks for JSON.
+    messages = list(messages)
+    messages.append({
+        "role": "system",
+        "content": "Return the response as valid json only. Do not include markdown or extra text."
+    })
+
     response = client.chat.completions.create(
         model="openai/gpt-oss-20b",
         messages=messages,
         temperature=0.3,
         max_tokens=500,
-        response_format={"type": "json_object"},
-        reasoning_format="hidden"
+        response_format={"type": "json_object"}
     )
 
     return response.choices[0].message.content

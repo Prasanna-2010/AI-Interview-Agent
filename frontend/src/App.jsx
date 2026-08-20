@@ -30,6 +30,24 @@ function App() {
     }
   }, [history]);
 
+  const getQuestionText = (reply) => {
+  if (!reply) return "";
+
+  // If the backend already returned an object
+  if (typeof reply === "object") {
+    return reply.question || "";
+  }
+
+  // If the backend returned JSON as a string
+  try {
+    const parsed = JSON.parse(reply);
+    return parsed.question || reply;
+  } catch {
+    // If it's already plain text, display it directly
+    return reply;
+  }
+};
+
   const handleStartInterview = async (e) => {
     e.preventDefault();
     if (!sessionId.trim() || !candidateId.trim()) return;
@@ -40,7 +58,8 @@ function App() {
 
     try {
       const data = await sendInterviewMessage(sessionId, candidateId, null);
-      setHistory([{ role: "interviewer", text: data.reply }]);
+      const question = getQuestionText(data.reply);
+      setHistory([{ role: "interviewer", text: question }]);
       setView("ACTIVE");
 
     } catch (err) {
@@ -67,7 +86,12 @@ function App() {
         setFeedback(data.feedback);
         setView("FEEDBACK");
       } else {
-        setHistory((prev) => [...prev, { role: "interviewer", text: data.reply }]);
+        const question = getQuestionText(data.reply);
+
+       setHistory((prev) => [
+            ...prev,
+           { role: "interviewer", text: question }
+            ]);
       }
     } catch (err) {
       setError("Something went wrong while evaluating your answer. Please try again.");
